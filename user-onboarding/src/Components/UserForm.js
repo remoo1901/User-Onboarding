@@ -4,11 +4,34 @@ import * as Yup from "yup";
 import axios from "axios";
 
 
-const UserForm = () => {
-    return (  
+const UserForm = ({ errors, touches, values, status }) => {
+    const [users, setUsers] = useState([])
 
-        <h1>iam here</h1>
+
+    useEffect(() => {
+
+        status && setUsers(users => [...users, status]);
+    }, [status]);
+
+
+    return (
+
+        <div>
+            <h1>User Onboarding</h1>
+            <Form>
+                <Field
+                    type="text"
+                    name="user"
+                    placeholder="username"
+                    values={values.user}
+
+                />
+
+
+            </Form>
+
+
+
+        </div>
     );
-}
- 
-export default UserForm;
+    export default UserForm;
