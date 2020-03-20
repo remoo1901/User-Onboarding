@@ -85,6 +85,8 @@ label {
 
 .error {
   color: red;
+  font-weight: 600;
+  text-shadow: 1px 1px white;
   font-size: 14px;
 }
 
